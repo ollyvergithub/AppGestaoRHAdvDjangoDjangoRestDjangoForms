@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>Funcionario List - class FuncionarioList(ListView):</h2>
+    <ul class="list-group list-group-flush">
+        {% for funcionario in object_list %}
+            <li class="list-group-item">{{ funcionario.nome }} <a href="{% url 'update_funcionarios' funcionario.id %}" class="btn btn-info align-right">Editar</a></li>
+        {% empty %}
+            <li>No funcionarios yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
