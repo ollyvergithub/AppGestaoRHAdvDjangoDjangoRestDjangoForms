@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
+# PROJECT_ROOT = os.path.dirname(__file__)
+# sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'empresas',
-    'funcionarios',
-    'departamentos',
-    'documentos',
-    'registro_hora_extra',
+    'apps.empresas',
+    'apps.funcionarios',
+    'apps.departamentos',
+    'apps.documentos',
+    'apps.registro_hora_extra',
 ]
 
 MIDDLEWARE = [
