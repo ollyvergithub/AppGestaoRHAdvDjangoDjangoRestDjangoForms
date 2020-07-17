@@ -4,6 +4,10 @@
 /.idea
 /venv
 /db.sqlite3
+!**/apps/departamentos/__pycache__/
+/apps/documentos/__pycache__/
+!**/apps/empresas/__pycache__/
+!**/apps/funcionarios/__pycache__/
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm
