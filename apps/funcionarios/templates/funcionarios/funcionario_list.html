@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <h2>Funcionario List - class FuncionarioList(ListView): <a href="{% url 'create_funcionarios' %}" class="btn btn-primary ml-2">Criar</a></h2>
-    <ul class="list-group list-group-flush">
-        {% for funcionario in object_list %}
-            <li class="list-group-item">{{ funcionario.nome }}
-                <a href="{% url 'update_funcionarios' funcionario.id %}" class="btn btn-info ml-2">Editar</a>
-                <a href="{% url 'delete_funcionarios' funcionario.id %}" class="btn btn-danger ml-2">Deletar</a>
-            </li>
-        {% empty %}
-            <li>No funcionarios yet.</li>
-        {% endfor %}
-    </ul>
+    <div class="d-flex bd-highlight border-bottom">
+          <div class="p-2 flex-grow-1 bd-highlight">
+              <h2>Funcionario List - class FuncionarioList(ListView): </h2>
+          </div>
+         <div class="p-2 bd-highlight">
+             <a href="{% url 'create_funcionarios' %}" class="btn btn-primary ml-2">Criar funcionário</a>
+         </div>
+    </div>
+
+    {% for funcionario in object_list %}
+        <div class="d-flex bd-highlight border-bottom">
+          <div class="p-2 flex-grow-1 bd-highlight">{{ funcionario.nome }}</div>
+          <div class="p-2 bd-highlight"><a href="{% url 'update_funcionarios' funcionario.id %}" class="btn btn-info ml-2">Editar</a></div>
+          <div class="p-2 bd-highlight"><a href="{% url 'delete_funcionarios' funcionario.id %}" class="btn btn-danger ml-2">Deletar</a></div>
+        </div>
+    {% empty %}
+        <div>No funcionarios yet.</div>
+    {% endfor %}
+
 {% endblock %}
