@@ -7,6 +7,7 @@ from apps.funcionarios import urls as funcionarios_urls
 from apps.empresas import urls as empresa_urls
 from apps.departamentos import urls as departamento_urls
 from apps.documentos import urls as documento_urls
+from apps.registro_hora_extra import urls as registro_hora_extra_urls
 
 urlpatterns = [
 
@@ -17,5 +18,6 @@ urlpatterns = [
     path('empresa/', include(empresa_urls)),
     path('departamentos/', include(departamento_urls)),
     path('documentos/', include(documento_urls)),
+    path('horas-extras/', include(registro_hora_extra_urls)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -17,14 +17,17 @@
         <div class="col-12 col-md-6">
 
             <div class="d-flex align-items-center mb-3">
-                <div class="mr-auto align-self-center">
-                    <p class=""><strong>Lista de documentos</strong></p>
-                </div>
-                <div class=" align-self-center">
-                    <a class="btn btn-secondary" href="{% url 'create_documento' object.id %}">Adicionar documento</a>
-                </div>
-            </div>
 
+                {% if object  %}
+                    <div class="mr-auto align-self-center">
+                        <p class=""><strong>Lista de documentos</strong></p>
+                    </div>
+                    <div class=" align-self-center">
+                        <a class="btn btn-secondary" href="{% url 'create_documento' object.id %}">Adicionar documento</a>
+                    </div>
+                {% endif %}
+
+            </div>
 
             {% for documento in object.documento_set.all %}
                 <div class="d-flex bd-highlight border-bottom">
