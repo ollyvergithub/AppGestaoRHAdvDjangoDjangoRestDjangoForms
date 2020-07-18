@@ -3,10 +3,38 @@
 
 {% block main %}
     <h1>Funcionário Create or Update</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|bootstrap }}
-        <button type="submit" class="btn btn-info">Salvar</button>
-    </form>
+    <div class='row'>
+        <div class="col-12 col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-info">Salvar</button>
+            </form>
+
+
+        </div>
+
+        <div class="col-12 col-md-6">
+
+            <div class="d-flex align-items-center mb-3">
+                <div class="mr-auto align-self-center">
+                    <p class=""><strong>Lista de documentos</strong></p>
+                </div>
+                <div class=" align-self-center">
+                    <a class="btn btn-secondary" href="{% url 'create_documento' object.id %}">Adicionar documento</a>
+                </div>
+            </div>
+
+
+            {% for documento in object.documento_set.all %}
+                <div class="d-flex bd-highlight border-bottom">
+                    <div class="p-2 flex-grow-1 bd-highlight">Descrição: {{ documento.descricao }} </div>
+                    <div class="p-2 bd-highlight"><a class="btn btn-info" href="{{ documento.arquivo.url }}">Ver documento</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
 
 {% endblock %}
