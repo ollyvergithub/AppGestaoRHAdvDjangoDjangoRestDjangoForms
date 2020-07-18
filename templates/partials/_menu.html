@@ -13,16 +13,15 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="funcionarios" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Funcionarios</a>
+                <a class="nav-link dropdown-toggle" href="#" id="funcionarios" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Funcionarios</a>
                 <div class="dropdown-menu" aria-labelledby="funcionarios">
                     <a class="dropdown-item" href="{% url 'list_funcionarios' %}">Listar Funcionários</a>
+                    <a class="dropdown-item" href="{% url 'create_funcionarios' %}">Criar Funcionário</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="empresas" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Empresas</a>
+                <a class="nav-link dropdown-toggle" href="#" id="empresas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Empresas</a>
                 <div class="dropdown-menu" aria-labelledby="empresas">
                     <a class="dropdown-item" href="{% url 'create_empresa' %}">Nova Empresa</a>
                 </div>
