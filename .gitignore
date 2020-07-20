@@ -4,10 +4,8 @@
 /.idea
 /venv
 /db.sqlite3
-!**/apps/departamentos/__pycache__/
-/apps/documentos/__pycache__/
-!**/apps/empresas/__pycache__/
-!**/apps/funcionarios/__pycache__/
+/gestao_rh.pem
+/gestao_rh.ppk
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm
@@ -109,4 +107,7 @@ fabric.properties
 .idea/$CACHE_FILE$
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm
+
+
+
 
