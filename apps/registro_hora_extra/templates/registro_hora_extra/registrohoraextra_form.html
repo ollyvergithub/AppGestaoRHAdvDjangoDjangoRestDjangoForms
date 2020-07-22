@@ -10,12 +10,16 @@
                 {% csrf_token %}
                 {{ form|bootstrap }}
                 <button type="submit" class="btn btn-info">Salvar</button>
-
+                <button id="label_botao_horas_extras" type="button" class="btn btn-primary ml-2" onclick="utilizouHoraExtra({{ object.id }})">
+                    {% if object.utilizada %}
+                        Marcar com NÃO utilizado
+                    {% else %}
+                        Marcar com utilizado
+                    {% endif %}
+                </button>
             </form>
-
-            <button class="btn btn-primary ml-2" onclick="utilizouHoraExtra({{ object.id }})">Marcar como utilizado</button>
-
             <div id="mensagem"></div>
+            <h2 id="horas_atualizadas">{{ object.funcionario.total_horas_extras }}</h2>
         </div>
     </div>
 {% endblock %}

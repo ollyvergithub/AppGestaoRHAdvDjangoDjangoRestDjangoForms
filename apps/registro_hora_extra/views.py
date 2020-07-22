@@ -1,4 +1,4 @@
-from django.core.serializers import json
+import json
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -62,8 +62,21 @@ class HoraExtraEditBase(UpdateView):
 
 
 class UtilizouHoraExtraAjax(View):
-    def post(self, pk):
-        response = json.dumps({'mensagem': 'Requisção executada'})
+    def post(self, *args, **kwargs):
+        registro_hora_extra = RegistroHoraExtra.objects.get(id=kwargs['pk'])
+        registro_hora_extra.utilizada = not registro_hora_extra.utilizada
+        # registro_hora_extra.utilizada = True
+        registro_hora_extra.save()
+        empregado = self.request.user.funcionario
+        horas = empregado.total_horas_extras
+
+        response = json.dumps(
+            {'mensagem': 'Requisicao executada',
+             'horas': float(horas),
+             'utilizada': registro_hora_extra.utilizada
+             }
+        )
+
         return HttpResponse(response, content_type='application/json')
 
 

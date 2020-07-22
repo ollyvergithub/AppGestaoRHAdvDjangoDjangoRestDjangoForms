@@ -7,13 +7,21 @@ function utilizouHoraExtra(id) {
 
     $.ajax({
         type: "POST",
-        url: 'utilizou-hora-extra-ajax/' + id + '/',
+        url: '/horas-extras/utilizou-hora-extra-ajax/' + id + '/',
         data: {
             csrfmiddlewaretoken: token
         },
         success: function (result) {
-            console.log("Sucesso AJAX")
-            $("#mensagem").text('Hora extra marcada como utilizada')
+            console.log("Sucesso AJAX ", result);
+            if (result.utilizada){
+                $("#label_botao_horas_extras").text('Marcar como NÃO utilizado')
+                //$("#label_botao_horas_extras").text('Marcar como NÃO utilizado')
+            }else {
+                $("#label_botao_horas_extras").text('Marcar como utilizado')
+            }
+            $("#mensagem").text(result.mensagem);
+            $("#horas_atualizadas").text("Saldo do Banco: " + result.horas)
+
         },
 
     });

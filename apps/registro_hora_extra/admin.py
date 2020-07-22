@@ -3,8 +3,8 @@ from .models import RegistroHoraExtra
 
 
 class ListandoHorasExtras(admin.ModelAdmin):
-    list_display = ('id', 'motivo', 'funcionario', 'horas')
-    list_editable = ('horas',)
+    list_display = ('id', 'motivo', 'funcionario', 'horas', 'utilizada')
+    list_editable = ('horas', 'utilizada')
 
 
 admin.site.register(RegistroHoraExtra, ListandoHorasExtras)
