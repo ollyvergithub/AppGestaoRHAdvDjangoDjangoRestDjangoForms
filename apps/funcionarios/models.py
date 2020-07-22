@@ -21,4 +21,4 @@ class Funcionario(models.Model):
 
     def total_horas_extras(self):
         total = self.registrohoraextra_set.all().aggregate(Sum('horas'))['horas__sum']
-        return total
+        return round(total, 2)

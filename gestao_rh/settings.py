@@ -14,6 +14,8 @@ ALLOWED_HOSTS = ['18.230.194.24', '177.71.157.147', 'localhost', '127.0.0.1']
 # sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
