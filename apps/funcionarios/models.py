@@ -22,5 +22,8 @@ class Funcionario(models.Model):
     @property
     def total_horas_extras(self):
         total = self.registrohoraextra_set.filter(utilizada=False).aggregate(Sum('horas'))['horas__sum']
-
-        return total or 0
+        if total:
+            return round(total, 2)
+        else:
+            return 0
+        #return total or 0

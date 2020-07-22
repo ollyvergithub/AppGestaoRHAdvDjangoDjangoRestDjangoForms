@@ -15,7 +15,6 @@ function utilizouHoraExtra(id) {
             console.log("Sucesso AJAX ", result);
             if (result.utilizada){
                 $("#label_botao_horas_extras").text('Marcar como NÃO utilizado')
-                //$("#label_botao_horas_extras").text('Marcar como NÃO utilizado')
             }else {
                 $("#label_botao_horas_extras").text('Marcar como utilizado')
             }
