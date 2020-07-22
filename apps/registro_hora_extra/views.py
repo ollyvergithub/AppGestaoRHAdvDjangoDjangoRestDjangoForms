@@ -1,5 +1,8 @@
+from django.core.serializers import json
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import RegistroHoraExtra
 from .forms import RegistroHoraExtraForm
@@ -56,6 +59,12 @@ class HoraExtraEditBase(UpdateView):
         kwargs = super(HoraExtraEditBase, self).get_form_kwargs()
         kwargs.update({'user': self.request.user})
         return kwargs
+
+
+class UtilizouHoraExtraAjax(View):
+    def post(self, pk):
+        response = json.dumps({'mensagem': 'Requisção executada'})
+        return HttpResponse(response, content_type='application/json')
 
 
 class HoraExtraDelete(DeleteView):
