@@ -9,6 +9,12 @@
         <div class="p-2 bd-highlight">
             <a href="{% url 'create_hora_extra' %}" class="btn btn-primary ml-2">Criar hora extra</a>
         </div>
+        <div class="p-2 bd-highlight">
+            <a href="{% url 'exportar_csv' %}" class="btn btn-warning ml-2">Exportar CSV</a>
+        </div>
+            <div class="p-2 bd-highlight">
+            <a href="{% url 'exportar_excel' %}" class="btn btn-warning ml-2">Exportar EXCEL</a>
+        </div>
     </div>
 
     {% for hora_extra in object_list %}
