@@ -11,9 +11,11 @@ from apps.registro_hora_extra import urls as registro_hora_extra_urls
 
 from rest_framework import routers
 from apps.funcionarios.api.views import FuncionarioViewSet
+from apps.registro_hora_extra.api.views import RegistroHoraExtraViewSet
 
 router = routers.SimpleRouter()
 router.register('funcionarios', FuncionarioViewSet)
+router.register('horas-extras', RegistroHoraExtraViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
