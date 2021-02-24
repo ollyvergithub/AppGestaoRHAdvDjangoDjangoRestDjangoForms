@@ -9,8 +9,13 @@ from apps.departamentos import urls as departamento_urls
 from apps.documentos import urls as documento_urls
 from apps.registro_hora_extra import urls as registro_hora_extra_urls
 
-urlpatterns = [
+from rest_framework import routers
+from apps.funcionarios.api.views import FuncionarioViewSet
 
+router = routers.SimpleRouter()
+router.register('funcionarios', FuncionarioViewSet)
+
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include(core_urls)),
@@ -19,5 +24,6 @@ urlpatterns = [
     path('departamentos/', include(departamento_urls)),
     path('documentos/', include(documento_urls)),
     path('horas-extras/', include(registro_hora_extra_urls)),
-
+    # API
+    path('api/', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
